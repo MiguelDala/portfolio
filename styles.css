@@ -139,6 +139,16 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: profileIn 1.2s 0.2s forwards;
+}
+
+@keyframes profileIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .hero-content h1 {
@@ -215,11 +225,12 @@ nav {
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
 }
 
 .project-button:hover {
-    background-color: #1e40af;
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 /* Contact section */
@@ -251,13 +262,13 @@ nav {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    transition: transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
     position: relative;
 }
 
 .social-button:hover {
-    transform: translateY(-3px);
-    background-color: var(--primary-dark);
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .social-button[href^="tel:"]::after {
@@ -385,11 +396,12 @@ footer {
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 5px var(--shadow-color);
-    transition: background-color 0.3s;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
 }
 
 .back-to-top:hover {
-    background-color: var(--primary-dark);
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 /* Mobile menu */
@@ -440,4 +452,56 @@ footer {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
+}
+
+/* Animação fade-in para seções */
+section {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInSection 1s forwards;
+}
+section.visible {
+    opacity: 1;
+    transform: none;
+}
+@keyframes fadeInSection {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Animação de hover nos botões */
+.project-button, .social-button, .back-to-top {
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+.project-button:hover, .social-button:hover, .back-to-top:hover {
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+/* Animação de entrada para a foto de perfil */
+.profile-image img {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: profileIn 1.2s 0.2s forwards;
+}
+@keyframes profileIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animação de digitação para o nome */
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #1e40af;
+    margin-bottom: 1rem;
+}
+
+/* Animação de entrada para o texto */
+.hero-content p {
+    font-size: 1.2rem;
+    color: #4b5563;
 } 
