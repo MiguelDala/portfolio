@@ -94,7 +94,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2563eb;
+    color: var(--primary-color);
 }
 
 .nav-links {
@@ -105,20 +105,20 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #2563eb;
+    color: var(--primary-color);
 }
 
 /* Hero section */
 .hero {
     padding: 8rem 5% 4rem;
     text-align: center;
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    background: linear-gradient(135deg, var(--section-bg) 0%, var(--bg-color) 100%);
 }
 
 .profile-container {
@@ -153,24 +153,24 @@ nav {
 
 .hero-content h1 {
     font-size: 2.5rem;
-    color: #1e40af;
+    color: var(--primary-dark);
     margin-bottom: 1rem;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    color: #4b5563;
+    color: var(--text-color);
 }
 
 /* About section */
 .about {
     padding: 4rem 5%;
-    background-color: #ffffff;
+    background-color: var(--card-bg);
 }
 
 .about h2 {
     text-align: center;
-    color: #1e40af;
+    color: var(--primary-dark);
     margin-bottom: 2rem;
 }
 
@@ -178,17 +178,18 @@ nav {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    color: var(--text-color);
 }
 
 /* Projects section */
 .projects {
     padding: 4rem 5%;
-    background-color: #f8fafc;
+    background-color: var(--section-bg);
 }
 
 .projects h2 {
     text-align: center;
-    color: #1e40af;
+    color: var(--primary-dark);
     margin-bottom: 2rem;
 }
 
@@ -201,11 +202,12 @@ nav {
 }
 
 .project-card {
-    background: #ffffff;
+    background: var(--card-bg);
     border-radius: 10px;
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px var(--shadow-color);
     transition: transform 0.3s;
+    color: var(--text-color);
 }
 
 .project-card:hover {
@@ -213,7 +215,7 @@ nav {
 }
 
 .project-card h3 {
-    color: #1e40af;
+    color: var(--primary-dark);
     margin-bottom: 1rem;
 }
 
@@ -221,7 +223,7 @@ nav {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
-    background-color: #2563eb;
+    background-color: var(--primary-color);
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -238,6 +240,7 @@ nav {
     padding: 4rem 5%;
     text-align: center;
     background-color: var(--section-bg);
+    color: var(--text-color);
 }
 
 .contact h2 {
@@ -299,7 +302,7 @@ nav {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #1e40af;
+    background-color: var(--primary-dark);
     color: #ffffff;
 }
 
@@ -332,6 +335,7 @@ footer {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    color: var(--text-color);
 }
 
 .skill-card::before {
@@ -496,12 +500,12 @@ section.visible {
 /* Animação de digitação para o nome */
 .hero-content h1 {
     font-size: 2.5rem;
-    color: #1e40af;
+    color: var(--primary-dark);
     margin-bottom: 1rem;
 }
 
 /* Animação de entrada para o texto */
 .hero-content p {
     font-size: 1.2rem;
-    color: #4b5563;
+    color: var(--text-color);
 } 

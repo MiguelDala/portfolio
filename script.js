@@ -175,3 +175,16 @@ const sectionObserver = new IntersectionObserver((entries, observer) => {
 sections.forEach(section => {
     sectionObserver.observe(section);
 });
+
+// Alternar modo dark/light ao clicar na foto de perfil
+const profileImg = document.querySelector('.profile-image img');
+if (profileImg) {
+    profileImg.addEventListener('click', () => {
+        body.setAttribute('data-theme', 
+            body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+        );
+        themeToggle.innerHTML = body.getAttribute('data-theme') === 'dark' 
+            ? '<i class="fas fa-sun"></i>' 
+            : '<i class="fas fa-moon"></i>';
+    });
+}
