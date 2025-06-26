@@ -34,122 +34,167 @@
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="profile-container">
+        <section id="home" class="hero new-hero-layout">
+            <div class="hero-flex">
                 <div class="profile-image">
                     <img src="https://scontent.fopo5-2.fna.fbcdn.net/v/t1.15752-9/474854892_631386592592815_6392578356057982160_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=G67AgxBKfggQ7kNvwGbRkpl&_nc_oc=AdmjjH6xdaklV89DdMwhOc69I59C0GP0ynSvEnccFqXDtt8nMxOYoreEFsNjw-JhZUs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fopo5-2.fna&oh=03_Q7cD2gEoGZTQMcDVcLGENxIbXARl1iyUyVXlNyNTKZl_7NeVkA&oe=6880E025" alt="Miguel Dala">
                 </div>
-            </div>
-            <div class="hero-content">
-                <h1>Miguel Dala</h1>
-                <p>Programador de Informática</p>
+                <div class="hero-content">
+                    <h1 class="highlighted-name">Miguel Dala <span class="typing-effect">| Programador</span></h1>
+                    <p>Transformando café em código e ideias em realidade... Angolano que codifica mais rápido que a internet.
+                        !</p>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <h2>Sobre Mim</h2>
-            <div class="about-content">
-                <p>Olá! Eu sou o Miguel, tenho 19 anos e sou natural de Angola. Atualmente, estudo na  Escola Profissional do Fundão  no 1º ano do curso de Programador de informática ,Sou apaixonado por tecnologia, programação e desenvolvimento de software.</p>
+        <section id="about" class="about timeline-section">
+            <h2>Minha Jornada</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-baby"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2006</span>
+                        <p>Nascimento em Angola</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <p>Início dos estudos na Escola Profissional do Fundão</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <p>Primeiros projetos em programação e desenvolvimento de software</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Futuro</span>
+                        <p>Buscando sempre evoluir e inovar na área de tecnologia!</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="skills" class="skills">
-            <h2>Linguagens</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
+            <h2>Minhas Skills</h2>
+            <div class="skills-bars">
+                <div class="skill-bar">
+                    <span>HTML5</span>
+                    <div class="bar"><div class="bar-fill html"></div></div>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>CSS</h3>
+                <div class="skill-bar">
+                    <span>CSS</span>
+                    <div class="bar"><div class="bar-fill css"></div></div>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>SQL</h3>
+                <div class="skill-bar">
+                    <span>SQL</span>
+                    <div class="bar"><div class="bar-fill sql"></div></div>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-code-branch"></i>
-                    <h3>C++</h3>
+                <div class="skill-bar">
+                    <span>C++</span>
+                    <div class="bar"><div class="bar-fill cpp"></div></div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="projects">
-            <h2>Modulos</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Programação em C/C++</h3>
-                    <p>Um trabalho sobre os fundamentos da programação em C e C++, linguagens poderosas para criar sistemas e aplicações de alto desempenho.</p>
-                    <a href="https://c-cpp-html.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+            <h2>Projetos em Destaque</h2>
+            <div class="projects-mosaic">
+                <div class="project-mosaic-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C/C++">
+                    <div class="project-info">
+                        <h3>Programação em C/C++</h3>
+                        <p>Fundamentos da programação em C e C++.</p>
+                        <a href="https://c-cpp-html.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Princípios Metodológicos de Programação</h3>
-                    <p>Um trabalho sobre princípios metodológicos de programação, com foco em Metodologia Ágil e Programação Orientada a Objetos.</p>
-                    <a href="https://da-programcao-html.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="project-mosaic-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML">
+                    <div class="project-info">
+                        <h3>Princípios Metodológicos</h3>
+                        <p>Metodologia Ágil e POO.</p>
+                        <a href="https://da-programcao-html.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Metodologias de Desenvolvimento de Software</h3>
-                    <p>Um projeto sobre metodologias de desenvolvimento de software, como Cascata, Scrum, Kanban e XP.</p>
-                    <a href="https://mds-html.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="project-mosaic-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Metodologias">
+                    <div class="project-info">
+                        <h3>Metodologias de Desenvolvimento de Software</h3>
+                        <p>Cascata, Scrum, Kanban e XP.</p>
+                        <a href="https://mds-html.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>O Universo Digital - IA</h3>
-                    <p>Um projeto sobre computação quântica e inteligência artificial, explorando as aplicações das teorias e propriedades da mecânica quântica na Ciência da Computação.</p>
-                    <a href="https://universo-html.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="project-mosaic-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="IA e Quântica">
+                    <div class="project-info">
+                        <h3>O Universo Digital - IA</h3>
+                        <p>Computação quântica e inteligência artificial.</p>
+                        <a href="https://universo-html.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Projeto Scrum</h3>
-                    <p>Um guia completo sobre a metodologia Scrum, incluindo papéis, eventos e artefatos.</p>
-                    <a href="https://pjt-scrum.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="project-mosaic-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="Scrum">
+                    <div class="project-info">
+                        <h3>Projeto Scrum</h3>
+                        <p>Guia completo sobre a metodologia Scrum.</p>
+                        <a href="https://pjt-scrum.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Periféricos & Algoritmos</h3>
-                    <p>Trabalho sobre periféricos, algoritmos e módulos do curso de Programador de Informática da Escola Profissional do Fundão.</p>
-                    <a href="https://perifericos-ruby.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="project-mosaic-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="Periféricos & Algoritmos">
+                    <div class="project-info">
+                        <h3>Periféricos & Algoritmos</h3>
+                        <p>Periféricos, algoritmos e módulos do curso.</p>
+                        <a href="https://perifericos-ruby.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Utilitários</h3>
-                    <p>Projeto sobre utilitários essenciais para sistemas computacionais, incluindo calculadora, bloco de notas, antivírus e mais.</p>
-                    <a href="https://utilitarios-henna.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="project-mosaic-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="Utilitários">
+                    <div class="project-info">
+                        <h3>Utilitários</h3>
+                        <p>Utilitários essenciais para sistemas computacionais.</p>
+                        <a href="https://utilitarios-henna.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Hello World & Algoritmos</h3>
-                    <p>Trabalho sobre algoritmos, programação em C/C++ e módulos do curso de Programador de Informática da Escola Profissional do Fundão.</p>
-                    <a href="https://hello-world-smoky-psi.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="project-mosaic-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="Hello World & Algoritmos">
+                    <div class="project-info">
+                        <h3>Hello World & Algoritmos</h3>
+                        <p>Algoritmos, programação em C/C++ e módulos do curso.</p>
+                        <a href="https://hello-world-smoky-psi.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Fundamentos de SQL</h3>
-                    <p>Um guia completo sobre SQL (Structured Query Language), incluindo DDL, DML, DQL, DCL, TCL e JOINs, com exemplos práticos e explicações detalhadas.</p>
-                    <a href="https://sql-fundacao.vercel.app/" class="project-button" target="_blank">
-                        Ver Projeto <i class="fas fa-external-link-alt"></i>
-                    </a>
+                <div class="project-mosaic-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="SQL">
+                    <div class="project-info">
+                        <h3>Fundamentos de SQL</h3>
+                        <p>Guia completo sobre SQL, DDL, DML, DQL, DCL, TCL e JOINs.</p>
+                        <a href="https://sql-fundacao.vercel.app/" class="project-button" target="_blank">Ver Projeto</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
             <h2>Contato</h2>
-            <div class="social-links">
-                <a href="https://github.com/MiguelDala" class="social-button"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/miguel_dala23/" class="social-button"><i class="fab fa-instagram"></i></a>
-                <a href="tel:+351963275607" class="social-button"><i class="fas fa-phone"></i></a>
+            <div class="contact-flex">
+                <form class="contact-form">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Mensagem" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="social-links-vertical">
+                    <a href="https://github.com/MiguelDala" class="social-button"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/miguel_dala23/" class="social-button"><i class="fab fa-instagram"></i></a>
+                    <a href="tel:+351963275607" class="social-button"><i class="fas fa-phone"></i></a>
+                </div>
             </div>
         </section>
     </main>
