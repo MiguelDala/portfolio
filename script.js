@@ -188,3 +188,18 @@ if (profileImg) {
             : '<i class="fas fa-moon"></i>';
     });
 }
+
+// Animação para os novos cards da timeline
+const animatedCards = document.querySelectorAll('.animated-card');
+const animatedCardObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+animatedCards.forEach(card => {
+    animatedCardObserver.observe(card);
+});

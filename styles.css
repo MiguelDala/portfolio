@@ -595,31 +595,53 @@ section.visible {
 .timeline:before {
     content: '';
     position: absolute;
-    left: 30px;
+    left: 59px;
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(180deg, #2563eb, #1a49e2);
+    background: #2563eb;
+    border-radius: 2px;
+    box-shadow: 0 0 8px 0 #2563eb33;
+    z-index: 0;
 }
 .timeline-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
     position: relative;
 }
+.timeline-dot {
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%) scale(0.7);
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 4px solid #2563eb;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 #2563eb44;
+    transition: box-shadow 0.4s, transform 0.4s;
+    z-index: 2;
+    opacity: 0;
+}
+.timeline-item.visible .timeline-dot {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 0 16px 4px #2563eb55;
+}
 .timeline-icon {
-    width: 60px;
-    height: 60px;
+    margin-left: 40px;
     background: #2563eb;
     color: #fff;
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    box-shadow: 0 2px 8px #2563eb22;
     position: relative;
-    z-index: 1;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.15);
+    z-index: 3;
+    animation: none;
 }
 .timeline-content {
     background: #fff;
@@ -801,4 +823,62 @@ section.visible {
 [data-theme="dark"] .timeline-icon {
     background: #3b82f6;
     color: #fff;
+}
+
+.animated-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    animation: animatedCardIn 1.2s forwards;
+    animation-delay: 0.3s;
+}
+.animated-card.visible {
+    opacity: 1;
+    transform: none;
+}
+@keyframes animatedCardIn {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* --- ANIMAÇÃO PROFISSIONAL TIMELINE (PRIORIDADE) --- */
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, #2563eb, #1a49e2, #43cea2, #ff9800);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease-in-out infinite;
+    border-radius: 3px;
+    box-shadow: 0 0 16px 2px #2563eb44;
+    z-index: 0;
+}
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+.timeline-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #2563eb 60%, #43cea2 100%);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+    animation: iconPulse 1.2s cubic-bezier(.4,2,.6,1) both;
+}
+@keyframes iconPulse {
+    0% { transform: scale(0.7); opacity: 0; }
+    60% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); }
 } 
