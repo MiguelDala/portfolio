@@ -1,13 +1,23 @@
-// Theme toggle functionality
+// Theme toggle functionality + persistence
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
 
+// Apply saved theme on load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.setAttribute('data-theme', savedTheme);
+}
+// Set correct icon on load
+themeToggle.innerHTML = body.getAttribute('data-theme') === 'dark'
+    ? '<i class="fas fa-sun"></i>'
+    : '<i class="fas fa-moon"></i>';
+
 themeToggle.addEventListener('click', () => {
-    body.setAttribute('data-theme', 
-        body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-    );
-    themeToggle.innerHTML = body.getAttribute('data-theme') === 'dark' 
-        ? '<i class="fas fa-sun"></i>' 
+    const nextTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('theme', nextTheme);
+    themeToggle.innerHTML = nextTheme === 'dark'
+        ? '<i class="fas fa-sun"></i>'
         : '<i class="fas fa-moon"></i>';
 });
 
@@ -138,6 +148,14 @@ document.querySelectorAll('.project-card, .skill-card').forEach(card => {
     observer.observe(card);
 });
 
+// Lazy-load all images except the profile image (already visible)
+document.querySelectorAll('img').forEach(img => {
+    const isHeroProfile = img.closest('.profile-image');
+    if (!isHeroProfile) {
+        img.setAttribute('loading', 'lazy');
+    }
+});
+
 // Header scroll effect
 const header = document.querySelector('.header');
 let lastScroll = 0;
@@ -180,11 +198,11 @@ sections.forEach(section => {
 const profileImg = document.querySelector('.profile-image img');
 if (profileImg) {
     profileImg.addEventListener('click', () => {
-        body.setAttribute('data-theme', 
-            body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-        );
-        themeToggle.innerHTML = body.getAttribute('data-theme') === 'dark' 
-            ? '<i class="fas fa-sun"></i>' 
+        const nextTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        body.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+        themeToggle.innerHTML = nextTheme === 'dark'
+            ? '<i class="fas fa-sun"></i>'
             : '<i class="fas fa-moon"></i>';
     });
 }
@@ -203,3 +221,53 @@ const animatedCardObserver = new IntersectionObserver((entries, observer) => {
 animatedCards.forEach(card => {
     animatedCardObserver.observe(card);
 });
+
+// Animate skill bars when they enter the viewport
+const skillBars = document.querySelectorAll('.bar-fill');
+const originalWidths = new WeakMap();
+
+// Store original width and reset to 0 initially for animation
+skillBars.forEach(bar => {
+    const computedWidth = getComputedStyle(bar).width;
+    originalWidths.set(bar, computedWidth);
+    bar.style.width = '0px';
+});
+
+const skillsObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const bar = entry.target;
+            const width = originalWidths.get(bar);
+            bar.style.width = width;
+            obs.unobserve(bar);
+        }
+    });
+}, { threshold: 0.3 });
+
+skillBars.forEach(bar => skillsObserver.observe(bar));
+
+// Contact form: send via mailto with prefilled subject/body
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const [nameInput, emailInput, messageInput] = contactForm.querySelectorAll('input, textarea');
+        const name = encodeURIComponent(nameInput.value.trim());
+        const email = encodeURIComponent(emailInput.value.trim());
+        const message = encodeURIComponent(messageInput.value.trim());
+
+        const subject = `Contato via portfólio - ${name || 'Sem nome'}`;
+        const body = `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`;
+        const recipient = 'miguel@example.com'; // ajuste para o seu email real
+        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoLink;
+    });
+}
+
+// Footer year auto-update (keeps 2024 style but updates year dynamically)
+const footerText = document.querySelector('footer p');
+if (footerText) {
+    const currentYear = new Date().getFullYear();
+    footerText.innerHTML = footerText.innerHTML.replace(/\b20\d{2}\b|\b19\d{2}\b/, String(currentYear));
+}
